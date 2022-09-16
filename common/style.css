@@ -1,4 +1,13 @@
-p {
+
+body {
 	color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 12pt;
+    background-color: yellow;
 }
 
+h1{
+    font-family: Arial
+}
