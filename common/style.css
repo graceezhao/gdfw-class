@@ -1,13 +1,46 @@
-
-body {
-	color: blue;
-    background-color: rgb(233, 229, 255);
-    font-family: 'Georgia', 'Times New Roman', 'Times', serif;
-    font-weight: bold;
-    font-style: italic;
+p {
+    color: rgb(19, 19, 65);
+    font-family: 'DM Sans', sans-serif;
     font-size: 12pt;
 }
 
-h1{
-    font-family: Arial;
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-style: bold;
 }
+
+h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-style: bold;
+}
+
+h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-style: bold;
+    background-color: rgb(193, 240, 189);
+    padding: 10px;
+    border: 2px dashed rgb(35, 149, 103);
+}
+
+a {
+    color: rgb(35, 149, 103);
+}
+
+a:hover {
+    color: purple;
+}
+
+a:visited {
+    color: pink;
+}
+
+.img-ghibli {
+    width: 200px;
+}
+
+/*.box {
+    width: 50vw;
+    height: 50vh;
+    background-image: linear-gradient(pink,lightblue);
+}
+*/
