@@ -1,0 +1,25 @@
+div {
+    animation: rotate-all 2s 0 infinite linear alternate;
+  }
+
+
+  .div1 {
+    width: 80px;
+    height: 80px;
+    background-color: #669999;
+    position: relative;
+    margin: auto;
+    animation: square-to-circle 2.5s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse;
+  
+  }
+
+/*p {
+    animation-duration: 3.5s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-fill-mode: none;
+}
+*/
