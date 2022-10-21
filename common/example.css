@@ -139,3 +139,62 @@
     background-color: green;
   }
 }
+
+
+
+.b1 {
+  top: 1100px; left: 100px;
+  width: 50px;
+  height: 300px;
+  margin-left: 100px;
+  transform: skewX(-20deg);
+  border-bottom-right-radius: 20px;
+  background: linear-gradient(rgb(242, 177, 255), rgb(156, 229, 175));
+  position: absolute;
+}
+
+.b2 {
+  top: 1100px; left: 40px;
+  width: 80px;
+  height: 300px;
+  margin-left: 100px;
+  transform: skewX(-20deg);
+  background: linear-gradient(rgb(228, 93, 255), rgb(83, 223, 123));
+  position: absolute;
+}
+
+.b3 {
+  top: 1100px; left: 150px;
+  width: 130px;
+  height: 300px;
+  margin-left: 100px;
+  transform: skewX(20deg);
+  background: linear-gradient(rgb(248, 176, 255), rgb(215, 145, 255), rgb(83, 223, 123));
+  position: absolute;
+}
+
+.b4 {
+  position: absolute;
+  top: 1250px; 
+  left: 250px;
+  width: 100px;
+  height: 70px;
+  margin-left: 30px;
+  border-radius: 30px;
+  background: linear-gradient(rgb(242, 177, 255), rgb(156, 229, 175));
+  animation: horizontal 3.5s linear infinite;
+
+  right: calc(100vw-(250px+100px));
+}
+
+
+
+@keyframes horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+} 
