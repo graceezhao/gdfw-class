@@ -1,5 +1,4 @@
 /*=========BASE=========*/
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,8 +7,7 @@
 
 body {
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
+    font-family: 'Inter Tight', sans-serif;
     background-color: black;
     background-size: cover;
     height: 700px;
@@ -17,22 +15,35 @@ body {
     font-size: 30pt;
 }
 
-.navbar {
+.navbar{
     background-color: black;
+    margin-bottom: 30px;
+}
+
+.navbar #eye-icon {
+    margin-right: -50px;
+}
+
+.navbar #grid-icon {
+    margin-left: -50px;
+}
+
+.navbar #grid-icon2 {
+    margin-left: -50px;
 }
 
 .backgroundimage{
     display: block;
     width: 100%vw;
     height: 100%vw;
-    
 }
 
-.container {
+.background {
     position: relative;
     text-align: center;
     color: white;
-    width: 100%;
+    width: 100%vw;
+    height: 100%vh;
 }
 
 .top-left {
@@ -46,15 +57,181 @@ img {
     height: 100%vw;
 }
 
-.navbar {
-    margin-bottom: 50px;
-}
-
 .artistname {
     font-size: 20px;
 }
+
+h1 {
+    margin-top: -30px;
+    /* font-size: 24pt; */
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 5vw;
+}
+
+h2 {
+    display: none;
+    /* font-size: 20pt; */
+    padding-top: 5vw;
+    font-size: 3vw;
+}
+
+.top-left:hover + h2 {
+    display: block;
+    color: white;
+}
+
+.top-left:hover {
+    opacity: 0.5;
+}
+
+.blacklayer {
+    display: none;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.title:hover + .black-layer {
+    display: block;
+}
+
+.black-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.visible {
+    all: unset;
+    cursor: pointer;
+    padding-top: 5px;
+    border: 0;
+    height: 20px;
+}
+
 /*=========GRID=========*/
 
-#grid {
-    margin-top: 50px;
+.background-grid {
+    position: relative;
+    text-align: center;
+    width: 100%vw;
 }
+h2 {
+    padding-top: 5vw;
+    font-size: 3vw;
+}
+
+#demo{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: white;
+    letter-spacing: 0.01em;
+    margin-bottom: -5px
+}
+
+#grid {
+    margin-top: 10px;
+}
+
+#grid .col-md-3{
+    margin-bottom: 10px;
+    display: none;
+}
+
+#grid .col-md-5{
+    margin-bottom: 10px;
+    display: none;
+}
+
+figcaption {
+    color: black;
+}
+
+.col-md-3:hover {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    margin: 8px;
+    max-width: 305px;
+    /* max-width: 320px;
+    min-width: 240px; */
+    text-align: center;
+    width: 100%;
+  }
+
+  .col-md-5:hover {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    margin: 8px;
+    max-width: 500px;
+    /* max-width: 320px;
+    min-width: 240px; */
+    text-align: center;
+    width: 100%;
+  }
+
+  .col-md-3:hover:before,
+  .col-md-3:hover:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 32px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleY(2);
+}
+
+.col-md-5:hover:before,
+.col-md-5:hover:after {
+background-color: rgba(0, 0, 0, 0.5);
+border-top: 32px solid rgba(0, 0, 0, 0.5);
+border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+position: absolute;
+z-index: 1;
+opacity: 0;
+transform: scaleY(2);
+}
+
+.col-md-3:hover img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+.col-md-5:hover img {
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
+  }
+
+/* .col-md-3:hover > img {
+    opacity: 0.7;
+  }
+
+  .col-md-5:hover > img {
+    opacity: 0.7;
+  } */
+
+  .col-md-3:hover figcaption {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    color: white;
+    /* align-items: left;
+    display: flex;
+    opacity: 0;
+    font-size: 8px;
+    font-weight: 100; */
+  }
+
+  .col-md-5:hover figcaption {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    color: white;
+  }
+
+  .col-md-3:hover figcaption {
+    opacity: 1;
+  }

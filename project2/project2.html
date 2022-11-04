@@ -3,55 +3,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <html lang="en-US">
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet"><link rel="stylesheet" href="project2style.css" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital@1&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Project 2: An Artwork a Day</title>
 </head>
 
 <body>
   <nav class="navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="project2grid.html">
-        <img src="https://www.gomammoth.co.uk/wp-content/uploads/2016/10/white-grid-icon-1.png" alt="" width="20" height="20">
+      <a class="col-lg-6 d-flex navbar-brand" id="grid-icon" href="project2grid.html">
+        <iconify-icon icon="bi:grid-fill" style="color: white;" width="20"></iconify-icon>
       </a>
-      <a class="eye-icon" href="#">
-        <img src="https://www.nicepng.com/png/full/303-3037570_eyequeue-white-eye-icon-transparent.png" alt="" width="30" height="20">
-      </a>
+      <button onclick="myScript()" class="col-lg-6 d-flex navbar-brand visible" id="eye-icon">
+        <iconify-icon icon="el:eye-close" style="color: white;" width="20"></iconify-icon>
+      </button> 
     </div>
+    
   </nav>
-  <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg" id="image" alt="" width="100%vw" height="100%vw">
-    <h1 class = "top-left" id="title"> Berthe Morisot</h1>
+  <div class="background">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg" id="image" alt="" width="100%vw" height="100%vw" style = "margin-top: 50px">
+    <h1 class = "top-left" id="title"> Peasant Girl Among Tulips, 1890</h1>
+    <h2 class = "top-left" id="artist"> Berthe Morisot</h2>
+    <div class="black-layer">hi</div>
   </div>
   
 
 <script type="text/javascript">
 
-  let image = document.getElementById('image');
+let image = document.getElementById('image');
+  let artist = document.getElementById('artist');
   let images = ["https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg", 
   "https://fabricworkshopandmuseum.org/wp-content/uploads/2018/08/Yinka-Shonibare.jpg", 
   "https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Renoir_-_La_Grenouill%C3%A8re.jpg",
   "https://www.thebroad.org/sites/default/files/art/mehretu_congress.jpg",
-  "https://images.squarespace-cdn.com/content/v1/5484b3b4e4b0883e5fe5efa4/1665029096877-3I8NUJHLHNXX7Y46HQE4/MAM-bouquetII-painting-72x90-lores.jpg?format=1000w",
-  "https://www.moma.org/media/W1siZiIsIjQ1NjM4NyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=684a403910e6753e"
+  "https://www.pacegallery.com/media/images/62241.width-2000.jpg",
+  "https://npg.si.edu/sites/default/files/shimimora.jpg",
+  "https://images.squarespace-cdn.com/content/v1/55eeceede4b03487a6076b71/1586532626199-NBCSSN6WK01SS5GHMRCS/1997-16.jpg?format=750w",
+  "https://lh3.googleusercontent.com/ci/AC_FhM9GWgj7jFYw1sBd_DBCEUcfnTphCQMyzX8dMncAPpQO7eVVOva5Y20H_lTU5EeYPlqSt3J3qT-U=s1200",
+  "https://lh3.googleusercontent.com/ci/AC_FhM-wrL-xbUkv-I_ZSo6UzXtV_TCWm0yc2A3O9oefu6uNrp8DQdToq8bsUH9NKOwqdpYR6-W8MA=s1200" ,
+  "https://media.nga.gov/iiif/99826227-4985-4774-98f6-097b38d461ec/full/full/0/default.jpg?attachment_filename=veue_de_l%27eglise_nostre_dame_de_rouen_1981.69.32.jpg",
+  "https://lh3.googleusercontent.com/ci/AC_FhM_na4xTy1RVfWtx8E78TEhHmIcPTDctzLXIi5dp6lreiH7sX7VBT-jn-L-2oy_5N7rdI1TmhmI=s1200",
+  "https://smarthistory.org/wp-content/uploads/2019/11/S-Delaunay-prisms-scaled.jpg" ,
+  "https://www.moma.org/media/W1siZiIsIjIzNDMxMyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=bcfedf37561ecec1"
 ];
+  let artists = ["Berthe Morisot, 1890", "Yinka Shonibare, 2002", "Auguste Renoir, 1869", "Julie Mehretu, 2003", "Yoshitomo Nara, 2007","Roger Shimomura, 2010", "Alice Neel, 1980", "Zhang Daqian, 1947", "Alphonse Mucha, 1900", "Israel Silvestre, 1664", "Dale Chihuly, 2000", "Sonia Delaunay, 1914", "Mark Bradford, 2007"];
+  let titles= ["Peasant Girl Among Tulips", "Space Walk", "La Grenouillère", "Congress", "1.2.3.4., Change the History", "BShimomura Crossing the Delaware", "Olivia", "Fun at a Lotus Pond", "Femme à la Marguerite", "Veue de l'Eglise nostre Dame de Rouen", "Nymph Pink Seaform Set", "Electrical Prisms", "Giant"]
 
-  let artists = ["Berthe Moriso", "Yinka Shonibare", "Auguste Renoir", "Julie Mehretu", "James Jean", "Alice Neel"];
+  var today = new Date(); 
+  var day1 = new Date("10/23/2022");
+  var date_diff = Math.floor((today.getTime() - day1.getTime()) / (1000 * 3600 * 24));
+  date_diff = date_diff%13; //change and add more images
 
-  // for (var i = 0; i < images.length; i++) {
-  //   setInterval(function(){
-  //   image.src = images[i];
-  //   h1= artists[i];
-  // }, 1000)
-  // }
+let index = 0;
+    image.src = images[date_diff];
+    artist.textContent = artists[date_diff];
+    title.textContent = titles[date_diff];
 
-
-  setInterval(function(){
-    let random = Math.floor(Math.random() * 6);
-    image.src = images[random];
-    h1= titles[random];
-  }, 1000)
 </script>
-
+<script language="javascript" 
+src="project2script.js"></script>  
 </body>
 </html>

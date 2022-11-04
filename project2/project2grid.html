@@ -6,43 +6,238 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="project2style.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   <title>Project 2: An Artwork a Day</title>
 </head>
 
 <body>
-  <nav class="navbar fixed-top navbar-dark bg-dark">
+  <nav class="navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="project2.html">
-        <img src="https://www.sticker.com/picture_library/product_images/custom-blank/custom-square-blank-stickers.png" alt="" width="20" height="20">
+      <a class="col-lg-6 d-flex navbar-brand" id="grid-icon2" href="project2.html">
+        <iconify-icon icon="bi:square-fill" style="color: white;" width="20"></iconify-icon>
       </a>
-      <a class="eye-icon" href="#">
-        <img src="https://www.nicepng.com/png/full/303-3037570_eyequeue-white-eye-icon-transparent.png" alt="" width="30" height="20">
-      </a>
+      <p id="demo"></p>   
+<script>
+  // Set countdown date
+  var countDownDate = new Date("Nov 5, 2022 00:00:00").getTime();
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+      
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+      
+    // Time calculations
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    // Results
+    document.getElementById("demo").innerHTML = "New artwork added in: " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+      
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("minutes").innerHTML = "00";
+      ocument.getElementById("seconds").innerHTML = "00";
+      seconds = 0;
+    }
+  }, 1000);
+
+//   function resertTimer(){
+//     document.getElementById("minutes").innerHTML = "00";
+//     document.getElementById("seconds").innerHTML = "00";
+//     seconds = 0;
+// }
+  </script>
     </div>
   </nav>
+  <div class="background-grid">
+    <img src="Group 2.png" id="image" alt="" width="100%vw" style = "margin-top: 50px">
   </div>
+  <div>
+    <p id="demo"></p>   
+<script>
+  // Set countdown date
+  var countDownDate = new Date("Nov 5, 2022 00:00:00").getTime();
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+      
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+      
+    // Time calculations
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    // Results
+    document.getElementById("demo").innerHTML = "New artwork added in: " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+      
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("minutes").innerHTML = "00";
+      ocument.getElementById("seconds").innerHTML = "00";
+      seconds = 0;
+    }
+  }, 1000);
+
+//   function resertTimer(){
+//     document.getElementById("minutes").innerHTML = "00";
+//     document.getElementById("seconds").innerHTML = "00";
+//     seconds = 0;
+// }
+  </script>
+  
+  </body>
+  </html>
+    
+  </div>
+
+<script type="text/javascript">
+
+  let image = document.getElementById('image');
+  let artist = document.getElementById('artist');
+  let images = ["https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg", 
+  "https://fabricworkshopandmuseum.org/wp-content/uploads/2018/08/Yinka-Shonibare.jpg", 
+  "https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Renoir_-_La_Grenouill%C3%A8re.jpg",
+  "https://www.thebroad.org/sites/default/files/art/mehretu_congress.jpg",
+  "https://www.pacegallery.com/media/images/62241.width-2000.jpg",
+  "https://npg.si.edu/sites/default/files/shimimora.jpg",
+  "https://images.squarespace-cdn.com/content/v1/55eeceede4b03487a6076b71/1586532626199-NBCSSN6WK01SS5GHMRCS/1997-16.jpg?format=750w",
+  "https://lh3.googleusercontent.com/ci/AC_FhM9GWgj7jFYw1sBd_DBCEUcfnTphCQMyzX8dMncAPpQO7eVVOva5Y20H_lTU5EeYPlqSt3J3qT-U=s1200",
+  "https://lh3.googleusercontent.com/ci/AC_FhM-wrL-xbUkv-I_ZSo6UzXtV_TCWm0yc2A3O9oefu6uNrp8DQdToq8bsUH9NKOwqdpYR6-W8MA=s1200" ,
+  "https://media.nga.gov/iiif/99826227-4985-4774-98f6-097b38d461ec/full/full/0/default.jpg?attachment_filename=veue_de_l%27eglise_nostre_dame_de_rouen_1981.69.32.jpg",
+  "https://lh3.googleusercontent.com/ci/AC_FhM_na4xTy1RVfWtx8E78TEhHmIcPTDctzLXIi5dp6lreiH7sX7VBT-jn-L-2oy_5N7rdI1TmhmI=s1200",
+  "https://lh3.googleusercontent.com/ci/AC_FhM_na4xTy1RVfWtx8E78TEhHmIcPTDctzLXIi5dp6lreiH7sX7VBT-jn-L-2oy_5N7rdI1TmhmI=s1200",
+  "https://smarthistory.org/wp-content/uploads/2019/11/S-Delaunay-prisms-scaled.jpg" ,
+  "https://www.moma.org/media/W1siZiIsIjIzNDMxMyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=bcfedf37561ecec1"
+];
+  let artists = ["Berthe Morisot, 1890", "Yinka Shonibare, 2002", "Auguste Renoir, 1869", "Julie Mehretu, 2003", "Yoshitomo Nara, 2007","Roger Shimomura, 2010", "Alice Neel, 1980", "Zhang Daqian, 1947", "Alphonse Mucha, 1900", "Israel Silvestre, 1664", "Dale Chihuly, 2000", "Sonia Delaunay, 1914", "Mark Bradford, 2007"];
+  let titles= ["Peasant Girl Among Tulips", "Space Walk", "La Grenouillère", "Congress", "1.2.3.4., Change the History", "BShimomura Crossing the Delaware", "Olivia", "Fun at a Lotus Pond", "Femme à la Marguerite", "Veue de l'Eglise nostre Dame de Rouen", "Nymph Pink Seaform Set with Foam White Lip Wrap", "Electrical Prisms", "Giant"]
+
+  var today = new Date(); 
+  var day1 = new Date("10/23/2022");
+  var date_diff = Math.floor((today.getTime() - day1.getTime()) / (1000 * 3600 * 24));
+  date_diff = date_diff%13; //change and add more images
+
+let index = 0;
+    image_src = images[date_diff];
+    artist_textContent = artists[date_diff];
+
+</script>
 
   <div class="container" id ="grid">
     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
     <div class="row">
-      <div class="col-md-8">.col-md-8</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div class="col-md-3" id="image1">
+        <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg">
+        <figcaption>
+          <h5>Peasant Girl Among Tulips <br/>Berthe Morisot, 1890</h5>
+        </figcaption>
+      </div>
+
+    <div class="col-md-3" id="image2">
+      <img class="img-fluid" src="https://fabricworkshopandmuseum.org/wp-content/uploads/2018/08/Yinka-Shonibare.jpg">
+      <figcaption>
+        <h5>Space Walk <br/>Yinka Shonibare, 2002</h5>
+      </figcaption>
+    </div>
+    
+      <div class="col-md-3" id="image3">
+        <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Renoir_-_La_Grenouill%C3%A8re.jpg">
+        <figcaption>
+          <h5>La Grenouillère<br/>Auguste Renoir, 1869</h5>
+        </figcaption>
+      </div>
+
+      <div class="col-md-3" id="image4">
+        <img class="img-fluid" src="https://www.thebroad.org/sites/default/files/art/mehretu_congress.jpg">
+        <figcaption>
+          <h5>Congress<br/>Julie Mehretu, 2003</h5>
+        </figcaption>
+      </div>
+
+      <div class="col-6 col-md-3" id="image5">
+        <img class="img-fluid" src="https://www.pacegallery.com/media/images/62241.width-2000.jpg">
+        <figcaption>
+          <h5>1.2.3.4., Change the History<br/>Yoshitomo Nara, 2007</h5>
+        </figcaption>
+      </div>
+
+      <div class="col-6 col-md-5" id="image6">
+        <img class="img-fluid" src="https://npg.si.edu/sites/default/files/shimimora.jpg">
+        <figcaption>
+          <h5>Shimomura Crossing the Delaware<br/>Roger Shimomura, 2010</h5>
+        </figcaption>
+      </div>
+      <div class="col-6 col-md-3" id="image7">
+        <img class="img-fluid" src="https://images.squarespace-cdn.com/content/v1/55eeceede4b03487a6076b71/1586532626199-NBCSSN6WK01SS5GHMRCS/1997-16.jpg?format=750w">
+        <figcaption>
+          <h5>Olivia <br/>Alice Neel, 1980</h5>
+        </figcaption>
+      </div>
     </div>
   
     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
     <div class="row">
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    
+      <div class="col-6 col-md-3" id="image8">
+        <img class="img-fluid" src="https://lh3.googleusercontent.com/ci/AC_FhM9GWgj7jFYw1sBd_DBCEUcfnTphCQMyzX8dMncAPpQO7eVVOva5Y20H_lTU5EeYPlqSt3J3qT-U=s1200">
+        <figcaption>
+          <h5>Fun at a Lotus Pond<br/>Zhang Daqian, 1947</h5>
+        </figcaption>
+      </div>
+      <div class="col-6 col-md-3" id="image9">
+        <img class="img-fluid" src="https://lh3.googleusercontent.com/ci/AC_FhM-wrL-xbUkv-I_ZSo6UzXtV_TCWm0yc2A3O9oefu6uNrp8DQdToq8bsUH9NKOwqdpYR6-W8MA=s1200">
+        <figcaption>
+          <h5>Femme à la Marguerite" <br/>Alphonse Mucha, 1900</h5>
+        </figcaption>
+      </div>
+      <div class="col-6 col-md-3" id="image10">
+        <img class="img-fluid" src="https://media.nga.gov/iiif/99826227-4985-4774-98f6-097b38d461ec/full/full/0/default.jpg?attachment_filename=veue_de_l%27eglise_nostre_dame_de_rouen_1981.69.32.jpg">
+        <figcaption>
+          <h5>Veue de l'Eglise nostre Dame de Rouen<br/>Israel Silvestre, 1664</h5>
+        </figcaption>
+      </div>
+      <div class="col-6 col-md-3" id="image11">
+        <img class="img-fluid" src="https://lh3.googleusercontent.com/ci/AC_FhM_na4xTy1RVfWtx8E78TEhHmIcPTDctzLXIi5dp6lreiH7sX7VBT-jn-L-2oy_5N7rdI1TmhmI=s1200">
+        <figcaption>
+          <h5>Nymph Pink Seaform Set<br/>Dale Chihuly, 2000</h5>
+        </figcaption>
+      </div>
     </div>
   
     <!-- Columns are always 50% wide, on mobile and desktop -->
     <div class="row">
-      <div class="col-6">.col-6</div>
-      <div class="col-6">.col-6</div>
-    </div>
+      <div class="col-6 col-md-3" id="image12">
+        <img class="img-fluid" src="https://smarthistory.org/wp-content/uploads/2019/11/S-Delaunay-prisms-scaled.jpg">
+        <figcaption>
+          <h5>Electrical Prisms<br/>Sonia Delaunay, 1914</h5>
+        </figcaption>
+      </div>
+      <div class="col-6 col-md-3" id="image13">
+        <img class="img-fluid" src="https://www.moma.org/media/W1siZiIsIjIzNDMxMyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=bcfedf37561ecec1">
+        <figcaption>
+          <h5>Giant<br/>Mark Bradford, 2007</h5>
+        </figcaption>
+      </div>
   </div>
 
+  <script language="javascript" src="project2script.js"></script>  
 </body>
 
 </html>
