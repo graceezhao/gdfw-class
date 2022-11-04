@@ -24,9 +24,11 @@ body {
     margin-right: -50px;
 }
 
+
 .navbar #grid-icon {
     margin-left: -50px;
 }
+
 
 .navbar #grid-icon2 {
     margin-left: -50px;
@@ -81,19 +83,18 @@ h2 {
     color: white;
 }
 
-.top-left:hover {
-    opacity: 0.5;
-}
-
 .blacklayer {
     display: none;
-    background-color: black;
-    opacity: 0.8;
 }
 
-.title:hover + .black-layer {
+.top-left:hover + .blacklayer{
     display: block;
+    background-color: black;
+    opacity: 0.8;
+    height: 100%vw;
+    width: 100%vw;
 }
+
 
 .black-layer {
     width: 100%;
@@ -144,6 +145,8 @@ h2 {
 #grid .col-md-5{
     margin-bottom: 10px;
     display: none;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 figcaption {

@@ -22,14 +22,16 @@
       <button onclick="myScript()" class="col-lg-6 d-flex navbar-brand visible" id="eye-icon">
         <iconify-icon icon="el:eye-close" style="color: white;" width="20"></iconify-icon>
       </button> 
+      
     </div>
     
   </nav>
   <div class="background">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg" id="image" alt="" width="100%vw" height="100%vw" style = "margin-top: 50px">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Morisot_-_Peasant_Girl_Among_Tulips%2C_1890.jpg" 
+      id="image" alt="" width="100%vw" height="100%vw" style = "margin-top: 50px">
     <h1 class = "top-left" id="title"> Peasant Girl Among Tulips, 1890</h1>
     <h2 class = "top-left" id="artist"> Berthe Morisot</h2>
-    <div class="black-layer">hi</div>
+    <div class="black-layer"></div>
   </div>
   
 
@@ -52,10 +54,10 @@ let image = document.getElementById('image');
   "https://www.moma.org/media/W1siZiIsIjIzNDMxMyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=bcfedf37561ecec1"
 ];
   let artists = ["Berthe Morisot, 1890", "Yinka Shonibare, 2002", "Auguste Renoir, 1869", "Julie Mehretu, 2003", "Yoshitomo Nara, 2007","Roger Shimomura, 2010", "Alice Neel, 1980", "Zhang Daqian, 1947", "Alphonse Mucha, 1900", "Israel Silvestre, 1664", "Dale Chihuly, 2000", "Sonia Delaunay, 1914", "Mark Bradford, 2007"];
-  let titles= ["Peasant Girl Among Tulips", "Space Walk", "La Grenouillère", "Congress", "1.2.3.4., Change the History", "BShimomura Crossing the Delaware", "Olivia", "Fun at a Lotus Pond", "Femme à la Marguerite", "Veue de l'Eglise nostre Dame de Rouen", "Nymph Pink Seaform Set", "Electrical Prisms", "Giant"]
+  let titles= ["Peasant Girl Among Tulips", "Space Walk", "La Grenouillère", "Congress", "1.2.3.4., Change the History", "Shimomura Crossing the Delaware", "Olivia", "Fun at a Lotus Pond", "Femme à la Marguerite", "Veue de l'Eglise nostre Dame de Rouen", "Nymph Pink Seaform Set", "Electrical Prisms", "Giant"]
 
   var today = new Date(); 
-  var day1 = new Date("10/23/2022");
+  var day1 = new Date("10/30/2022");
   var date_diff = Math.floor((today.getTime() - day1.getTime()) / (1000 * 3600 * 24));
   date_diff = date_diff%13; //change and add more images
 
