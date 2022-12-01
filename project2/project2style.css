@@ -29,9 +29,15 @@ body {
     margin-left: -50px;
 }
 
-
-.navbar #grid-icon2 {
-    margin-left: -50px;
+#demo2{
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: lighter;
+    color: white;
+    letter-spacing: 0.01em;
+    margin-bottom: -5px;
+    margin-right: -0.5em;
 }
 
 .backgroundimage{
@@ -113,6 +119,10 @@ h2 {
 }
 
 /*=========GRID=========*/
+
+.navbar #grid-icon2 {
+    margin-left: -50px;
+}
 
 .background-grid {
     position: relative;

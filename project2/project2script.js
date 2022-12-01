@@ -18,8 +18,16 @@ function myScript() {
 
 //change eye button after it's been clicked
 
-function myClick(x) {
-    x.classList.toggle("eye-icon2");
-  }
+function togglediv(id) {
+    var div = document.getElementById(id);
+    div.style.visibility = div.style.visibility == "hidden" ? "hidden" : "visible";
+    div.style.opacity = div.style.opacity == "0" ? "1" : "0";
 
-//2 images- 1 with display none and display block
+    var icon = document.getElementById("eye-icon");
+    icon.classList.toggle('eye-icon');
+    icon.classList.toggle('eye-icon2');
+}
+
+// function myClick(x) {
+//     x.classList.toggle("eye-icon2");
+//   }
