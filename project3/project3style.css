@@ -1,197 +1,570 @@
+@import url("https://use.typekit.net/iym1zat.css");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 /*=========BASE=========*/
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: miller-banner, serif;
-    /* background-color: rgb(247, 245, 232); */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* font-family: miller-banner, serif; */
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgb(247, 245, 232);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(247, 245, 232);
 }
 
-/* #start button{
-    position:fixed;
-    margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-} */
 
 /* ------------------QUESTION 1: DRAWING BOX------------------------------ */
 
 h2 {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .container {
-    height: 100%;
-    display: flex;
-    border: 1.5px solid black;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  height: 100%;
+  display: flex;
+  border: 1.5px solid black;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #toolbar {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    width: 70px;
-    /* background-color:rgb(247, 245, 232); */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 70px;
+  /* background-color:rgb(247, 245, 232); */
 }
 
 #toolbar * {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 #toolbar label {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 #toolbar input {
-    width: 100%;
+  width: 100%;
 }
 
 #toolbar button {
-    background-color: black;
-    border: none;
-    border-radius: 4px;
-    color:white;
-    padding: 2px;
-    font-size: 12px;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 2px;
+  font-size: 12px;
 }
 
 
 /* ------------------QUESTIONS------------------------------ */
 
+html {
+  box-sizing: border-box;
+}
 
-  html {
-    box-sizing: border-box;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    font-weight: 100;
-    line-height: 1.7rem;
-    background: rgb(247, 245, 232);
-  }
-  .quiz-container {
-    padding: 3rem;
-    width: 50%;
-    margin: 5rem auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  .title {
-    margin-top: 4em;
-    margin-bottom: 4rem;
-    color: #00000050;
-    font-weight: 400;
-    font-size: 4rem;
-    text-align: center;
-    text-transform: uppercase;
-    align-items: center;
-  }
-  .title .btn {
-    font-size: 0.50em;
-  }
-  .question {
-    margin: 2rem 0;
-    font-size: 1.5rem;
-  }
-  .option {
-    padding: 1rem;
-    color: black;
-    width: 80%;
-    border-radius: 5px;
-    transition: all 0.3s;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  line-height: 1.7rem;
+  background: rgb(247, 245, 232);
+}
+
+.quiz-container {
+  padding: 3rem;
+  width: 50%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title {
+  margin-top: 4em;
+  margin-bottom: 4rem;
+  color: #00000050;
+  font-weight: 400;
+  font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.title .btn {
+  font-size: 0.50em;
+}
+
+.question {
+  margin: 2rem 0;
+  font-size: 2rem;
+  line-height: 1.3em;
+}
+
+.option {
+  padding: 1rem;
+  color: black;
+  width: 80%;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.option input:checked .option {
+  background: black;
+  color: black;
+}
+
+.controls>* {
+  margin: 1rem;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 300;
+  color: black;
+  transform: scale(0.98);
+  transition: all 0.2s;
+  outline: 1px solid black;
+  background: rgb(247, 245, 232)
+}
+
+button.previous {
+  outline: black;
+  outline: 1px solid black;
+}
+
+button.next {
+  outline: black;
+  outline: 1px solid black;
+
+}
+
+button.restart {
+  background: rgb(247, 245, 232);
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  transition: all 0.4s;
+}
+
+button.restart:hover {
+  color: rgb(247, 245, 232);
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.02);
+  font-weight: 500;
+  background-color: black;
+  color: rgb(247, 245, 232);
+
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+  min-height: 100vh;
+}
+
+.final-score {
+  color: black;
+}
+
+.summary {
+  font-size: 1rem;
+  color: black;
+  background: rgb(247, 245, 232);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary h1 {
+  align-self: center;
+  color: black;
+}
+
+.resultImage {
+  width: 5em;
+  height: 5em;
+
+}
+
+/* ------------------PROGRESS BAR------------------*/
+.w-0 {
+  width: 0%;
+}
+
+.w-1 {
+  width: 16.66%;
+}
+
+.w-2 {
+  width: 33.33%;
+}
+
+.w-3 {
+  width: 50%;
+}
+
+.w-4 {
+  width: 66.66%;
+}
+
+.w-5 {
+  width: 83.33%;
+}
+
+.w-6 {
+  width: 100%;
+}
+
+/* ------------------CONFETTI------------------*/
+.confetti-container {
+  user-select: none;
+  z-index: 10;
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.confetti .square {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--bg);
+  transform: rotate(-140deg);
+}
+
+.confetti .rectangle {
+  width: 1rem;
+  height: 0.5rem;
+  background-color: var(--bg);
+}
+
+.confetti .hexagram {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1rem solid var(--bg);
+  position: relative;
+}
+
+.confetti .hexagram:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid var(--bg);
+  position: absolute;
+  top: 0.33rem;
+  left: -0.5rem;
+}
+
+.confetti .pentagram {
+  width: 0rem;
+  height: 0rem;
+  display: block;
+  margin: 0.5rem 0;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(35deg);
+  position: relative;
+}
+
+.confetti .pentagram:before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-bottom: 0.8rem solid var(--bg);
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  transform: rotate(-35deg);
+  position: absolute;
+  top: -0.45rem;
+  left: -0.65rem;
+}
+
+.confetti .pentagram:after {
+  content: "";
+  width: 0rem;
+  height: 0rem;
+  display: block;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(-70deg);
+  position: absolute;
+  top: 0.03rem;
+  left: -1.05rem;
+}
+
+.confetti .dodecagram {
+  background: var(--bg);
+  width: 0.8rem;
+  height: 0.8rem;
+  position: relative;
+}
+
+.confetti .dodecagram:before {
+  content: "";
+  height: 0.8rem;
+  width: 0.8rem;
+  background: var(--bg);
+  transform: rotate(30deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.confetti .dodecagram:after {
+  content: "";
+  height: 0.8rem;
+  width: 0.8rem;
+  background: var(--bg);
+  transform: rotate(60deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.confetti .wavy-line {
+  position: relative;
+}
+
+.confetti .wavy-line::after,
+.confetti .wavy-line::before {
+  content: "";
+  height: 1rem;
+  width: 8rem;
+  background-size: 2rem 1rem;
+  position: absolute;
+  left: -9rem;
+  transform: rotate(90deg);
+}
+
+.confetti .wavy-line::before {
+  background-image: linear-gradient(45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%);
+  top: 1rem;
+}
+
+.confetti .wavy-line::after {
+  background-image: linear-gradient(-45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%);
+}
+
+.confetti i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+  animation-name: confetti;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(70s / var(--speed));
+}
+
+.confetti i:nth-child(even) {
+  transform: rotate(90deg);
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh);
   }
 
-  .option input:checked .option {
-    background: black;
-    color: black;
+  100% {
+    transform: translateY(100vh);
   }
-  .controls > * {
-    margin: 1rem;
+}
+
+/* CLOUDS */
+/* body {
+
+  overflow: hidden;
+}
+
+#clouds {
+  position: absolute;
+  top: 55px;
+  z-index: -100;
+  display: none;
+}
+
+
+.cloud {
+  width: 200px;
+  height: 60px;
+  background: rgb(255, 255, 255);
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+  content: '';
+  position: absolute;
+  background: rgb(255, 255, 255);
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+
+
+.x1 {
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+}
+.x2 {
+  left: 200px;
+
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+  left: -250px;
+  top: -200px;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+  left: 470px;
+  top: -250px;
+
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+  left: -150px;
+  top: -150px;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
   }
 
-  button {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: 300;
-    color: black;
-    transform: scale(0.98);
-    transition: all 0.2s;
-    outline: 1px solid black;
-    background: rgb(247, 245, 232)
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+@keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
   }
 
-  button.previous {
-    outline: black;
-    outline: 1px solid black;
+  100% {
+    margin-left: -1000px;
   }
-  button.next {
-    outline: black;
-    outline: 1px solid black;
+}
 
+@-o-keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
   }
-  button.restart {
-    background: rgb(247, 245, 232);
-    color: black;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    transition: all 0.4s;
-  }
-  button.restart:hover {
-    color: rgb(247, 245, 232);
-  }
-  button:hover,
-  button:focus {
-    transform: scale(1.02);
-    font-weight: 500;
-    background-color: black;
-    color: rgb(247, 245, 232);
 
+  100% {
+    margin-left: -1000px;
   }
-  .result {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 2.5rem;
-    min-height: 100vh;
-  }
-  .final-score {
-    color: black;
-  }
-  .summary {
-    font-size: 1rem;
-    color: black;
-    background: rgb(247, 245, 232);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 2rem;
-    margin-bottom: 2rem;
-  }
-  .summary h1 {
-    align-self: center;
-    color: black;
-  }
-  
+} */
+
+/* ------------------MOOD QUESTION------------------------------ */
+.css-selector {
+  background: linear-gradient(215deg, #9eebff, #ff9edb, #ffd1ae, #e6ff72, #72a3ff);
+  background-size: 1000% 1000%;
+}
+
+/* ------------------CURSORS------------------------------ */
+.q1cursor {
+  cursor: help;
+}

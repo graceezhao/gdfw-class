@@ -71,22 +71,22 @@
 
 const questions = [
     {
-        "question": "Let's start with an easy question. What's one word to describe your mood right now?",
-        "answer1": "Happy :)",
+        "question": "What word describes your personality the best?",
+        "answer1": "Calm",
         "answer1Total": "1",
-        "answer2": "At peace",
+        "answer2": "Dynamic",
         "answer2Total": "2",
-        "answer3": "Neutral",
+        "answer3": "Chaotic",
         "answer3Total": "3",
-        "answer4": "Meh :/",
+        "answer4": "Sneaky",
         "answer4Total": "4"
-      },
+    },
       {
         "question": "You're at a French restaurant. Choose an entree dish:",
         "answer1": "Salmon en papillote",
         "answer1Total": "1",
         "answer2": "Ratatouille",
-        "answer2Total": "6",
+        "answer2Total": "4",
         "answer3": "Veal French Onion Burger",
         "answer3Total": "2",
         "answer4": "Boeuf bourguignon",
@@ -115,21 +115,20 @@ const questions = [
         "answer4Total": "2"
       },
       {
-        "question": "What's one word that describes your personality the best?",
-        "answer1": "Calm",
+        "question": "What's one word to describe your mood at the moment?",
+        "answer1": "Happy:)",
         "answer1Total": "1",
-        "answer2": "Dynamic",
+        "answer2": "At peace",
         "answer2Total": "2",
-        "answer3": "Chaotic",
-        "answer3Total": "6",
-        "answer4": "Sneaky",
+        "answer3": "Neutral",
+        "answer3Total": "3",
+        "answer4": "Meh:/",
         "answer4Total": "4"
-    },
-
+      },
       {
         "question": "What's your favorite movie genre?",
         "answer1": "Thriller & horror",
-        "answer1Total": "6",
+        "answer1Total": "1",
         "answer2": "Fantasy & sci-fi",
         "answer2Total": "2",
         "answer3": "Comedy",
@@ -175,19 +174,20 @@ function generateQuestions (index) {
     option3.innerHTML = `${question.answer3}`
     option4.innerHTML = `${question.answer4}`
 
+
     function css(element, style) {
-        for (const property in style) {
+      
+        for (const property in style){
             element.style[property] = style[property];
+        }
+
     }
-}
 
     if (index == 0) {
         const container = document.querySelector(".quiz-container");
         const body = document.querySelector("body");
         const confetti = document.querySelector(".confetti");
-        const clouds = document.querySelector("#clouds");
-        const option = document.querySelectorAll(".option");
-        const question = document.querySelectorAll(".question");
+       
 
         css(body, {
             'min-height': '100%',
@@ -198,30 +198,18 @@ function generateQuestions (index) {
             'background-position': 'center, center',
             'background-color': 'rgb(144, 188, 255)'
         });
-        css(clouds, {
-            'display': 'flex'
-        });
-        for (let i=0; i<option.length; i++) {
-            css(option[i], {
-                'font-size': '1.5em',
-            });
-        }
-        css(container, {
-            'font-family': "cy-text, sans-serif",
-            'font-weight': '700'
-        });
-    
         css(confetti, {
             'display': 'none'
         });
     }
 
     if (index == 1) {
+       
+        // const container = document.querySelector(".quiz-container");
         const body = document.querySelector("body");
         const progressBar = document.querySelector(".progress-bar");
         const confetti = document.querySelector(".confetti");
-        const option = document.querySelectorAll(".option");
-        // const clouds = document.querySelector("#clouds");
+        const clouds = document.querySelector("#clouds");
         css(body, {
             'min-height': '100%',
             'background-image': 'url("q2(1).png")',
@@ -229,32 +217,19 @@ function generateQuestions (index) {
             'display': 'flex',
             'background-repeat': 'no-repeat',
             'background-position': 'center, center',
-            'background-color': 'rgb(247, 245, 232)',
+            'background-color': 'rgb(247, 245, 232)'
         });
         css(confetti, {
             'display': 'none'
         });
-        css(container, {
-            'font-family': "miller-banner, serif",
-            'color': 'black',
-            'font-weight': '400'
-        });
-        for (let i=0; i<option.length; i++) {
-            css(option[i], {
-                'color': 'black',
-                'font-family': "miller-banner, serif",
-                'font-size': '1.2em',
-            });
-        }
         progressBar.classList.add("w-1");
         css(clouds, {
             'display': 'none'
         });
-        
     }
-    
 
     if (index == 2) {
+
         const body = document.querySelector("body");
         const option = document.querySelectorAll(".option");
         const progressBar = document.querySelector(".progress-bar");
@@ -265,16 +240,16 @@ function generateQuestions (index) {
             'display': 'flex',
             'background-repeat': 'no-repeat',
             'background-position': 'center, center',
-            // 'background': 'radial-gradient(circle at 5.3% 17.2%, rgb(255, 208, 253) 0%, rgb(255, 237, 216) 90%)',
+            'background': 'radial-gradient(circle at 5.3% 17.2%, rgb(255, 208, 253) 0%, rgb(255, 237, 216) 90%)',
+        
         });
         css(container, {
-            'font-family': "memoriam-inline-pro, sans-serif",
             'color': 'black',
         });
+        // progressBar.classList.remove("w-10");
         for (let i=0; i<option.length; i++) {
             css(option[i], {
                 'color': 'black',
-                'font-family': "memoriam-inline-pro, sans-serif",
             });
         }
         progressBar.classList.add("w-2");
@@ -284,26 +259,9 @@ function generateQuestions (index) {
         const body = document.querySelector("body");
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
-        const option = document.querySelectorAll(".option");
-        css(body, {
-            'min-height': '100%',
-            'background-image': 'url("q4.png")',
-            'background-size': 'cover',
-            'display': 'flex',
-            'background-repeat': 'no-repeat',
-            'background-position': 'center, center'
-        });
         css(confetti, {
             'display': 'none'
         });
-        css(container, {
-            'color': 'white',
-        });
-        for (let i=0; i<option.length; i++) {
-            css(option[i], {
-                'color': 'white',
-            });
-        }
 
         progressBar.classList.add("w-3");
     }
@@ -314,17 +272,20 @@ function generateQuestions (index) {
         const option = document.querySelectorAll(".option");
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
-        const bg = document.querySelector(".css-selector");
         css(body, {
             'min-height': '100%',
-            'background': 'linear-gradient(240deg, #9eebff, #ff9edb, #ffd1ae, #e6ff72)',
+            'background-image': 'url("q4.png")',
+            'background-size': 'cover',
+            'display': 'flex',
+            'background-repeat': 'no-repeat',
+            'background-position': 'center, center'
         });
         css(container, {
-            'color': 'black',
+            'color': 'white',
         });
         for (let i=0; i<option.length; i++) {
             css(option[i], {
-                'color': 'black',
+                'color': 'white',
             });
         }
         css(confetti, {
@@ -336,25 +297,18 @@ function generateQuestions (index) {
     }
 
     if (index == 5) {
-        const container = document.querySelector(".quiz-container");
         const body = document.querySelector("body");
-        const option = document.querySelectorAll(".option");
-        const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
         css(body, {
-            'min-height': '100%',
-            'background-size': 'cover',
-            'display': 'flex',
-            'background-repeat': 'no-repeat',
-            'background-position': 'center, center'
+            'color': 'rgb(247, 245, 232)',
+            'font-family': "'bd-supper', sans-serif",
+            'background': 'none'
         });
         css(confetti, {
             'display': 'none'
         });
         progressBar.classList.add("w-5");
     }
-
-
 }
 
 function loadNextQuestion () {
@@ -374,7 +328,7 @@ function loadNextQuestion () {
 
     const totalScore = score.reduce((total, currentNum) => total + currentNum);
 
-    //Finally we incement the current question number ( to be used as the index for each array)
+    //Incement the current question number ( to be used as the index for each array)
     currentQuestion++;
 
         //once finished clear checked
@@ -391,32 +345,30 @@ function loadNextQuestion () {
         const confetti = document.querySelector(".confetti");
         confetti.style.display = 'flex';
         if (totalScore>1) {
+            
             result.innerHTML = 
             `<h1 class="resultText">Congrats! You are ______</h1>
-            <img style="height:5em;" src="rat1.png"></img>
+            <img style="height:1em;" src="rat1.png"></img>
             <p class="resultDescription">description about character</p>
-            <button class="restart">Restart Quiz</button>
             `
         }
-        else if (totalScore<15) {
-            result.innerHTML = 
-            `<h1 class="resultText">Congrats! You are ______</h1>
-            <img src="rat1.png"></img>
-            <p class="resultDescription">description about character</p>
-            <button class="restart">Restart Quiz</button>
-            `
-        }
-        else if (totalScore>20) {
-            result.innerHTML = 
-            `
-            <div class= "result-container">
-            <h1 class="resultText">Congrats, you are Rowdy Rat!</h1>
-            <img class ="resultImage" src="rat1.png"></img>
-            <p class="resultDescription">description about character</p>
-            <button class="restart">Restart Quiz</button>
-            </div>
-            `
-        }
+        // else if (totalScore<15) {
+        //     result.innerHTML = 
+        //     `<h1 class="resultText">Congrats! You are ______</h1>
+        //     <img src="rat1.png"></img>
+        //     <p class="resultDescription">description about character</p>
+        //     `
+        // }
+        // else if (totalScore<20) {
+        //     result.innerHTML = 
+        //     `
+        //     <div class= "result-container">
+        //     <h1 class="resultText">Congrats! You are ______</h1>
+        //     <img class ="resultImage" src="rat1.png"></img>
+        //     <p class="resultDescription">description about character</p>
+        //     </div>
+        //     `
+        // }
         // result.innerHTML = 
         //  `<h1 class="final-score">Your score: ${totalScore}</h1>
         //  <div class="summary">
@@ -454,3 +406,17 @@ generateQuestions(currentQuestion);
 nextButton.addEventListener('click', loadNextQuestion);
 previousButton.addEventListener('click',loadPreviousQuestion);
 result.addEventListener('click',restartQuiz);
+
+
+//flashlight
+
+// function update(e){
+//     var x = e.clientX || e.touches[0].clientX
+//     var y = e.clientY || e.touches[0].clientY
+  
+//     document.documentElement.style.setProperty('--cursorX', x + 'px')
+//     document.documentElement.style.setProperty('--cursorY', y + 'px')
+//   }
+  
+//   document.addEventListener('mousemove',update)
+//   document.addEventListener('touchmove',update)
