@@ -17,6 +17,10 @@ body {
   background-color: rgb(247, 245, 232);
 }
 
+.indexcontainer {
+  position: relative;
+  text-align: center;
+}
 
 /* ------------------QUESTION 1: DRAWING BOX------------------------------ */
 
@@ -92,23 +96,36 @@ body {
 }
 
 .title {
+  /* position: absolute;
   margin-top: 4em;
   margin-bottom: 4rem;
   color: #00000050;
-  font-weight: 400;
+  
   font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
-  align-items: center;
+  align-items: center; */
+  position: absolute;
+  font-weight: 400;
+  font-family: miller-banner;
+  text-transform: uppercase;
+  font-size: 3rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title .btn {
   font-size: 0.50em;
 }
+.title .btn:hover {
+  font-size: 0.55em;
+}
+
 
 .question {
   margin: 2rem 0;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1.3em;
 }
 
@@ -138,7 +155,7 @@ button {
   transform: scale(0.98);
   transition: all 0.2s;
   outline: 1px solid black;
-  background: rgb(247, 245, 232)
+  background: none;
 }
 
 button.previous {
@@ -153,15 +170,16 @@ button.next {
 }
 
 button.restart {
-  background: rgb(247, 245, 232);
+  background: none;
   color: black;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   transition: all 0.4s;
+  margin-top: 2em;
 }
 
 button.restart:hover {
-  color: rgb(247, 245, 232);
+  color: none;
 }
 
 button:hover,
@@ -182,10 +200,7 @@ button:focus {
   text-align: center;
   font-size: 2.5rem;
   min-height: 100vh;
-}
-
-.final-score {
-  color: black;
+  /* background-color: rgb(247, 245, 232); */
 }
 
 .summary {
@@ -193,7 +208,7 @@ button:focus {
   color: black;
   background: rgb(247, 245, 232);
   border-radius: 5px;
-  display: flex;
+  display: absolute;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 2rem;
@@ -206,8 +221,9 @@ button:focus {
 }
 
 .resultImage {
+  display: flex;
   width: 5em;
-  height: 5em;
+  padding-bottom: -3em;
 
 }
 
@@ -243,7 +259,7 @@ button:focus {
 /* ------------------CONFETTI------------------*/
 .confetti-container {
   user-select: none;
-  z-index: 10;
+  z-index: -10;
 }
 
 .confetti {
@@ -414,154 +430,6 @@ button:focus {
   100% {
     transform: translateY(100vh);
   }
-}
-
-/* CLOUDS */
-/* body {
-
-  overflow: hidden;
-}
-
-#clouds {
-  position: absolute;
-  top: 55px;
-  z-index: -100;
-  display: none;
-}
-
-
-.cloud {
-  width: 200px;
-  height: 60px;
-  background: rgb(255, 255, 255);
-  border-radius: 200px;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  position: relative;
-}
-
-.cloud:before,
-.cloud:after {
-  content: '';
-  position: absolute;
-  background: rgb(255, 255, 255);
-  width: 100px;
-  height: 70px;
-  position: absolute;
-  top: -15px;
-  left: 10px;
-
-  border-radius: 100px;
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-}
-
-.cloud:after {
-  width: 120px;
-  height: 120px;
-  top: -55px;
-  left: auto;
-  right: 15px;
-}
-
-
-.x1 {
-  -webkit-animation: moveclouds 15s linear infinite;
-  -moz-animation: moveclouds 15s linear infinite;
-  -o-animation: moveclouds 15s linear infinite;
-}
-.x2 {
-  left: 200px;
-
-  -webkit-transform: scale(0.6);
-  -moz-transform: scale(0.6);
-  transform: scale(0.6);
-  opacity: 0.6;
-  -webkit-animation: moveclouds 25s linear infinite;
-  -moz-animation: moveclouds 25s linear infinite;
-  -o-animation: moveclouds 25s linear infinite;
-}
-
-.x3 {
-  left: -250px;
-  top: -200px;
-
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0.8;
-
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
-}
-
-.x4 {
-  left: 470px;
-  top: -250px;
-
-  -webkit-transform: scale(0.75);
-  -moz-transform: scale(0.75);
-  transform: scale(0.75);
-  opacity: 0.75;
-
-  -webkit-animation: moveclouds 18s linear infinite;
-  -moz-animation: moveclouds 18s linear infinite;
-  -o-animation: moveclouds 18s linear infinite;
-}
-
-.x5 {
-  left: -150px;
-  top: -150px;
-
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0.8;
-
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
-}
-
-@-webkit-keyframes moveclouds {
-  0% {
-    margin-left: 1000px;
-  }
-
-  100% {
-    margin-left: -1000px;
-  }
-}
-
-@keyframes moveclouds {
-  0% {
-    margin-left: 1000px;
-  }
-
-  100% {
-    margin-left: -1000px;
-  }
-}
-
-@-o-keyframes moveclouds {
-  0% {
-    margin-left: 1000px;
-  }
-
-  100% {
-    margin-left: -1000px;
-  }
-} */
-
-/* ------------------MOOD QUESTION------------------------------ */
-.css-selector {
-  background: linear-gradient(215deg, #9eebff, #ff9edb, #ffd1ae, #e6ff72, #72a3ff);
-  background-size: 1000% 1000%;
 }
 
 /* ------------------CURSORS------------------------------ */

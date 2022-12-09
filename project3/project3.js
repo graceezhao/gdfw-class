@@ -71,7 +71,7 @@
 
 const questions = [
     {
-        "question": "Let's start with an easy question. What's one word to describe your mood right now?",
+        "question": "Let's start with an easy question. What's one word that describes your mood right now?",
         "answer1": "Happy :)",
         "answer1Total": "1",
         "answer2": "At peace",
@@ -115,28 +115,27 @@ const questions = [
         "answer4Total": "2"
       },
       {
-        "question": "What's one word that describes your personality the best?",
+        "question": "FAVORITE MOVIE GENRE?",
+        "answer1": "Thriller & horror",
+        "answer1Total": "6",
+        "answer2": "Fantasy & sci-fi",
+        "answer2Total": "3",
+        "answer3": "Comedy",
+        "answer3Total": "1",
+        "answer4": "Action",
+        "answer4Total": "2"
+      },
+      {
+        "question": "What's a word that describes your personality?",
         "answer1": "Calm",
         "answer1Total": "1",
         "answer2": "Dynamic",
         "answer2Total": "2",
         "answer3": "Chaotic",
         "answer3Total": "6",
-        "answer4": "Sneaky",
+        "answer4": "Shy",
         "answer4Total": "4"
-    },
-
-      {
-        "question": "What's your favorite movie genre?",
-        "answer1": "Thriller & horror",
-        "answer1Total": "6",
-        "answer2": "Fantasy & sci-fi",
-        "answer2Total": "2",
-        "answer3": "Comedy",
-        "answer3Total": "3",
-        "answer4": "Action",
-        "answer4Total": "4"
-      }
+    }
 ]
 
 let currentQuestion = 0;
@@ -185,35 +184,45 @@ function generateQuestions (index) {
         const container = document.querySelector(".quiz-container");
         const body = document.querySelector("body");
         const confetti = document.querySelector(".confetti");
-        const clouds = document.querySelector("#clouds");
         const option = document.querySelectorAll(".option");
-        const question = document.querySelectorAll(".question");
-
+        const previous = document.querySelector(".previous");
+        const next = document.querySelector(".next");
         css(body, {
             'min-height': '100%',
-            'background-image': 'url("q1.png")',
+            'background-image': 'url("q1(2).png")',
             'background-size': 'cover',
             'display': 'flex',
             'background-repeat': 'no-repeat',
             'background-position': 'center, center',
             'background-color': 'rgb(144, 188, 255)'
         });
-        css(clouds, {
-            'display': 'flex'
-        });
-        for (let i=0; i<option.length; i++) {
-            css(option[i], {
-                'font-size': '1.5em',
-            });
-        }
-        css(container, {
-            'font-family': "cy-text, sans-serif",
-            'font-weight': '700'
-        });
-    
         css(confetti, {
             'display': 'none'
         });
+        for (let i=0; i<option.length; i++) {
+            css(option[i], {
+                'font-size': '1.2em',
+                'font-weight': '400',
+                'color': 'white'
+            });
+        }
+        
+        css(container, {
+            'font-family': "'Almarai', sans-serif",
+            'font-weight': '700',
+            'color': 'white'
+        });
+        css(previous, {
+            'color': 'white',
+            'outline': '1px solid white',
+            'background': 'none'
+        });
+        css(next, {
+            'color': 'white',
+            'outline': '1px solid white',
+            'background': 'none'
+        });
+        
     }
 
     if (index == 1) {
@@ -221,7 +230,8 @@ function generateQuestions (index) {
         const progressBar = document.querySelector(".progress-bar");
         const confetti = document.querySelector(".confetti");
         const option = document.querySelectorAll(".option");
-        // const clouds = document.querySelector("#clouds");
+        const previous = document.querySelector(".previous");
+        const next = document.querySelector(".next");
         css(body, {
             'min-height': '100%',
             'background-image': 'url("q2(1).png")',
@@ -234,10 +244,17 @@ function generateQuestions (index) {
         css(confetti, {
             'display': 'none'
         });
-        css(container, {
-            'font-family': "miller-banner, serif",
+        css(previous, {
             'color': 'black',
-            'font-weight': '400'
+            'outline': '1px solid black',
+        });
+        css(next, {
+            'color': 'black',
+            'outline': '1px solid black'
+        });
+        css(container, {
+            'font-family': "hwt-konop-6-line, sans-serif",
+            'color': 'black',
         });
         for (let i=0; i<option.length; i++) {
             css(option[i], {
@@ -265,16 +282,15 @@ function generateQuestions (index) {
             'display': 'flex',
             'background-repeat': 'no-repeat',
             'background-position': 'center, center',
+            'background-color': 'rgb(247, 228, 241)'
             // 'background': 'radial-gradient(circle at 5.3% 17.2%, rgb(255, 208, 253) 0%, rgb(255, 237, 216) 90%)',
         });
         css(container, {
-            'font-family': "memoriam-inline-pro, sans-serif",
             'color': 'black',
         });
         for (let i=0; i<option.length; i++) {
             css(option[i], {
                 'color': 'black',
-                'font-family': "memoriam-inline-pro, sans-serif",
             });
         }
         progressBar.classList.add("w-2");
@@ -285,6 +301,8 @@ function generateQuestions (index) {
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
         const option = document.querySelectorAll(".option");
+        const previous = document.querySelector(".previous");
+        const next = document.querySelector(".next");
         css(body, {
             'min-height': '100%',
             'background-image': 'url("q4.png")',
@@ -298,12 +316,22 @@ function generateQuestions (index) {
         });
         css(container, {
             'color': 'white',
+            'font-family': "parity-sans-mono, monospace",
         });
         for (let i=0; i<option.length; i++) {
             css(option[i], {
                 'color': 'white',
+                'font-family': "parity-sans-mono, monospace",
             });
         }
+        css(previous, {
+            'color': 'white',
+            'outline': '1px solid white'
+        });
+        css(next, {
+            'color': 'white',
+            'outline': '1px solid white'
+        });
 
         progressBar.classList.add("w-3");
     }
@@ -314,21 +342,30 @@ function generateQuestions (index) {
         const option = document.querySelectorAll(".option");
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
-        const bg = document.querySelector(".css-selector");
+        const buttons = document.querySelector("button");
+
         css(body, {
             'min-height': '100%',
-            'background': 'linear-gradient(240deg, #9eebff, #ff9edb, #ffd1ae, #e6ff72)',
+            'background-image': 'url("q6.png")',
         });
+    
         css(container, {
-            'color': 'black',
+            'font-family': "hwt-konop-6-line, sans-serif",
+            'color': 'black'
         });
-        for (let i=0; i<option.length; i++) {
-            css(option[i], {
-                'color': 'black',
-            });
-        }
+        css(question, {
+            'font-family': 'casablanca-urw, sans-serif',
+        });
+        // for (let i=0; i<option.length; i++) {
+        //     css(option[i], {
+        //         'font-family': 'forma-djr-banner, sans-serif',
+        //     });
+        // }
         css(confetti, {
             'display': 'none'
+        });
+        css(buttons, {
+            'background-color': 'none'
         });
         
         progressBar.classList.add("w-4");
@@ -341,19 +378,34 @@ function generateQuestions (index) {
         const option = document.querySelectorAll(".option");
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
+        const question = document.querySelector(".question");
         css(body, {
             'min-height': '100%',
             'background-size': 'cover',
             'display': 'flex',
             'background-repeat': 'no-repeat',
-            'background-position': 'center, center'
+            'background-position': 'center, center',
+            'background-image': 'url(https://i.pinimg.com/originals/92/e6/d6/92e6d62b9cbb5d275463ad286218fbdf.jpg)'
         });
         css(confetti, {
             'display': 'none'
         });
+        css(container, {
+            'font-family': "parity-sans-mono, monospace",
+            'color': 'white'
+        });
+        css(question, {
+            'font-family': 'afronaut, sans-serif',
+        });
+        for (let i=0; i<option.length; i++) {
+            css(option[i], {
+                'font-family': 'parity-sans-mono, monospace',
+                'color': 'white'
+            });
+        }
         progressBar.classList.add("w-5");
     }
-
+    
 
 }
 
@@ -364,57 +416,103 @@ function loadNextQuestion () {
         alert('Select an option to move on!');
         return;
     }
-    //Get value of selected radio
+
     const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
 
-    ////Add the answer score to the score array
     score.push(answerScore);
 
     selectedAnswersData.push();
 
     const totalScore = score.reduce((total, currentNum) => total + currentNum);
 
-    //Finally we incement the current question number ( to be used as the index for each array)
     currentQuestion++;
 
-        //once finished clear checked
         selectedOption.checked = false;
 
-    //If quiz is on the final question
+        //quiz done
     if(currentQuestion == totalQuestions - 1) {
         nextButton.textContent = 'Finish';
     }
-    //If the quiz is finished then we hide the questions container and show the results 
+
     if(currentQuestion == totalQuestions) {
+
         container.style.display = 'none';
-        
         const confetti = document.querySelector(".confetti");
         confetti.style.display = 'flex';
-        if (totalScore>1) {
+        
+    
+        if (totalScore<10) {
             result.innerHTML = 
-            `<h1 class="resultText">Congrats! You are ______</h1>
-            <img style="height:5em;" src="rat1.png"></img>
-            <p class="resultDescription">description about character</p>
+            `<div style="display:flex; align-items: center; justify-content: center;">
+            <h1 class="resultText" style="font-size:1.0em; font-family: hwt-konop-6-line, sans-serif;">Congrats! You are DJ Dog.</h1>
+            <img style="height:13em; padding-left: -1em;" src="djdog.png"></img>
+            <p style="line-height: 1.0; font-size: 0.75em;"class="resultDescription">
+            You are definitely coolest out of all your friends. You have great taste 
+            in pretty much everything. People think you're very outgoing, however
+            you're secretly an introvert.</p>
+            </div>
             <button class="restart">Restart Quiz</button>
             `
         }
         else if (totalScore<15) {
             result.innerHTML = 
-            `<h1 class="resultText">Congrats! You are ______</h1>
-            <img src="rat1.png"></img>
-            <p class="resultDescription">description about character</p>
+            `<div style="display:flex; align-items: center; justify-content: center;">
+            <h1 class="resultText" style="font-size:1.0em; font-family: hwt-konop-6-line, sans-serif;">
+            Congrats! You are Bohemian Bunny.</h1>
+            <img style="height:13em; padding-left: -1em;" 
+            src="bohemianbunny.png"></img>
+            <p style="line-height: 1.0; font-size: 0.75em;"class="resultDescription">
+            You have an old soul and give the best advice. Maybe too carefree sometimes,
+            but somehow everything works out for you.
+            </p>
+            </div>
             <button class="restart">Restart Quiz</button>
             `
         }
-        else if (totalScore>20) {
+        else if (totalScore<20) {
             result.innerHTML = 
-            `
-            <div class= "result-container">
-            <h1 class="resultText">Congrats, you are Rowdy Rat!</h1>
-            <img class ="resultImage" src="rat1.png"></img>
-            <p class="resultDescription">description about character</p>
-            <button class="restart">Restart Quiz</button>
+            `<div style="display:flex; align-items: center; justify-content: center;">
+            <h1 class="resultText" style="font-size:1.0em; font-family: hwt-konop-6-line, sans-serif;">
+            Congrats! You are Feral Frog.</h1>
+            <img style="height:13em; padding-left: -1em;" 
+            src="feralfrog.png"></img>
+            <p style="line-height: 1.0; font-size: 0.75em;"class="resultDescription">
+            You look intimidating but you're actually a softie. You're always the center of
+            attention, whether you like it or not. Amazing sense of humor. 
+            </p>
             </div>
+            <button class="restart">Restart Quiz</button>
+            `
+        }
+        else if (totalScore<25) {
+            result.innerHTML = 
+            `<div style="display:flex; align-items: center; justify-content: center;">
+            <h1 class="resultText" style="font-size:1.0em; font-family: hwt-konop-6-line, sans-serif;">
+            Congrats! You are Conjuring Cat.</h1>
+            <img style="height:13em; padding-left: -1em;" 
+            src="conjuringcat.png"></img>
+            <p style="line-height: 1.0; font-size: 0.75em;"class="resultDescription">
+            You're reserved, innovative, and somewhat sassy. Most likely introverted and 
+            unpredictable. You likely have a high IQ and are a prodigy of some sort.
+            </p>
+            </div>
+            <button class="restart">Restart Quiz</button>
+            `
+        }
+        else if (totalScore<31) {
+            result.innerHTML = 
+            `<div style="display:flex; align-items: center; justify-content: center;">
+            <h1 class="resultText" style="font-size:1.0em; font-family: hwt-konop-6-line, sans-serif;">
+            Congrats! You are Rowdy Rat.</h1>
+            <img style="height:13em; padding-left: -1em;" 
+            src="rowdyrat.png"></img>
+            <p style="line-height: 1.0; font-size: 0.75em;"class="resultDescription">
+            Pure chaos. However, you're the most self-aware out of everyone.
+            You always know how to have a good time, regardless of situation. 
+            Also, you're an extremely resourceful being. 
+            </p>
+            </div>
+            <button class="restart">Restart Quiz</button>
             `
         }
         // result.innerHTML = 
@@ -441,10 +539,8 @@ function loadPreviousQuestion() {
 //Fuction to reset and restart the quiz;
 function restartQuiz(e) {
     if(e.target.matches('button')) {
-    //reset array index and score
     currentQuestion = 0;
     score = [];
-    //Reload quiz to the start
     location.reload();
     }
 
