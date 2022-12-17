@@ -272,6 +272,7 @@ function generateQuestions (index) {
     
 
     if (index == 2) {
+        const container = document.querySelector(".quiz-container");
         const body = document.querySelector("body");
         const option = document.querySelectorAll(".option");
         const progressBar = document.querySelector(".progress-bar");
@@ -303,6 +304,7 @@ function generateQuestions (index) {
         const option = document.querySelectorAll(".option");
         const previous = document.querySelector(".previous");
         const next = document.querySelector(".next");
+        const container = document.querySelector(".quiz-container");
         css(body, {
             'min-height': '100%',
             'background-image': 'url("q4.png")',
@@ -342,25 +344,37 @@ function generateQuestions (index) {
         const option = document.querySelectorAll(".option");
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
-        const buttons = document.querySelector("button");
+        const previous = document.querySelector(".previous");
+        const next = document.querySelector(".next");
 
         css(body, {
             'min-height': '100%',
             'background-image': 'url("q6.png")',
         });
-    
+
+        for (let i=0; i<option.length; i++) {
+            css(option[i], {
+                'font-family': 'parity-sans-mono, monospace',
+                'color': 'rgb(71, 40, 199)'
+            });
+        }
+        css(previous, {
+            'color': 'rgb(71, 40, 199)',
+            'outline': '1px solid blue',
+        });
+        css(next, {
+            'color': 'rgb(71, 40, 199)',
+            'outline': '1px solid rgb(71, 40, 199)'
+        });
         css(container, {
             'font-family': "hwt-konop-6-line, sans-serif",
-            'color': 'black'
+            'color': 'rgb(71, 40, 199)'
         });
         css(question, {
-            'font-family': 'casablanca-urw, sans-serif',
+            'font-family': 'hwt-arabesque, sans-serif',
+            'color': 'rgb(71, 40, 199)'
         });
-        // for (let i=0; i<option.length; i++) {
-        //     css(option[i], {
-        //         'font-family': 'forma-djr-banner, sans-serif',
-        //     });
-        // }
+        
         css(confetti, {
             'display': 'none'
         });
@@ -379,6 +393,8 @@ function generateQuestions (index) {
         const confetti = document.querySelector(".confetti");
         const progressBar = document.querySelector(".progress-bar");
         const question = document.querySelector(".question");
+        const previous = document.querySelector(".previous");
+        const next = document.querySelector(".next");
         css(body, {
             'min-height': '100%',
             'background-size': 'cover',
@@ -389,6 +405,14 @@ function generateQuestions (index) {
         });
         css(confetti, {
             'display': 'none'
+        });
+        css(previous, {
+            'color': 'white',
+            'outline': '1px solid white',
+        });
+        css(next, {
+            'color': 'white',
+            'outline': '1px solid white'
         });
         css(container, {
             'font-family': "parity-sans-mono, monospace",
@@ -403,6 +427,7 @@ function generateQuestions (index) {
                 'color': 'white'
             });
         }
+        
         progressBar.classList.add("w-5");
     }
     

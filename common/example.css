@@ -41,86 +41,7 @@ body {
       transform: rotate(45deg) scale(1.2);
   }
 }
-/* @keyframes heart-pump-colors {
-  0% {
-		background-color: blue;
-  }
-  50% {
-    background-color: yellow;
-    color: rgba(200,155,20,0.8);
-  }
-  100% {
-    background-color: green;
-  }
-} */
 
-/* .a1 {
-  position: absolute;
-  content: "";
-  margin-top: 200px;
-  position: absolute;
-  width: 50px;
-  height: 300px;
-  left: 0px;
-  background: pink;
-  transform: skewX(20deg);
-  animation: move-2 1s 10s;
-  margin-left: 300px;
-}
-
-
-.a2 {
-  position: absolute;
-  content: "";
-  margin-top: 199px;
-  position: absolute;
-  width: 50px;
-  height: 299px;
-  margin-left: 200px;
-  background: pink;
-  transform: skewX(-30deg);
-  animation: move-2 1s infinite;
-}
-
-.a3 {
-  position: absolute;
-  content: "";
-  margin-top: 350px;
-  position: absolute;
-  width: 140px;
-  height: 50px;
-  left: 0px;
-  background: pink;
-  transform: skewX(20deg);
-  animation: move-2 1s infinite;
-  margin-left: 210px;
-
-}
-
-.a3:hover,
-.a1:hover,
-.a2:hover {
-  background: purple;
-}
- 
-@keyframes move {
-  
-  to {
-      animation-timing-function: linear;
-  }
-}
-
-@keyframes move-1 {
-  to {
-      transform: rotate(45deg) scale(1.2);
-  }
-}
-
-@keyframes move-2 {
-  to {
-      transform: rotate(15deg) scale(1);
-  }
-} */
 
 .b1 {
   top: 0px; left: 100px;
@@ -132,13 +53,7 @@ body {
   background: linear-gradient(rgb(242, 177, 255), rgb(156, 229, 175)); 
   position: absolute;
   animation: moveRight 3.5s linear infinite alternate;
-  /*animation-name: colors;
-  animation-duration: infinite;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-direction: normal;
-  animation-play-state: running;
-  */
+
 }
 @keyframes colors {
   0% {
